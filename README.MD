@@ -8,19 +8,37 @@ This repository contains a Python simulation model that projects various politic
 - **Detailed Interactions:** Model the relationships between variables to simulate realistic outcomes.
 - **Enhanced Visualization:** Visualize the results with detailed plots for each variable over time.
 - **Advanced Libraries:** Utilizes SciPy for scientific computing and SimPy for discrete-event simulation to provide robust and accurate modeling.
+- **Installation Logging:** Batch script logs the installation process for easy troubleshooting.
 
 ## Installation
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/kernferm/presidential-future-events-simulation.git
+    git clone https://github.com/your-username/presidential-future-events-simulation.git
     cd presidential-future-events-simulation
     ```
 
-2. Install the required dependencies:
+2. Run the batch script to install the required dependencies:
     ```sh
-    pip install numpy matplotlib scipy simpy
+    install_dependencies.bat
     ```
+
+    This script will:
+    - Check if Python is installed.
+    - Check if pip is installed and attempt to install it if not.
+    - Install the necessary Python packages: `numpy`, `matplotlib`, `scipy`, and `simpy`.
+    - Log the installation process to `install_log.txt` for troubleshooting.
+
+### Logging
+
+The batch script `install_dependencies.bat` logs each step of the installation process to a file named `install_log.txt`. This log file includes:
+
+- Verification of Python installation.
+- Verification and installation of pip.
+- Installation of each Python package.
+- Success or failure messages for each step.
+
+You can review the `install_log.txt` file to troubleshoot any issues that arise during the installation process.
 
 ## Usage
 
@@ -50,7 +68,7 @@ After running the script and inputting the initial values, the following plots w
 - **Public Approval (%)**
 - **Legislative Success Rate (%)**
 - **Social Unrest Index**
-- **Immigration Rate (%)
+- **Immigration Rate (%)**
 
 These plots provide a visual representation of the simulated impacts of the hypothetical presidency on the various factors over the 10-year period.
 
