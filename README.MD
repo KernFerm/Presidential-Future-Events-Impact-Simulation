@@ -1,4 +1,4 @@
-# Presidential Impact Simulation
+# Presidential and Future Events Impact Simulation Model
 
 This repository contains a Python simulation model that projects various political, economic, and social factors over a hypothetical 10-year period under a specified presidency. The model allows users to input initial values for several key variables and simulates their progression based on defined interactions and random fluctuations.
 
@@ -12,8 +12,8 @@ This repository contains a Python simulation model that projects various politic
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/presidential-impact-simulation.git
-    cd presidential-impact-simulation
+    git clone https://github.com/kernferm/presidential-future-events-simulation.git
+    cd presidential-future-events-simulation
     ```
 
 2. Install the required dependencies:
@@ -49,7 +49,7 @@ After running the script and inputting the initial values, the following plots w
 - **Public Approval (%)**
 - **Legislative Success Rate (%)**
 - **Social Unrest Index**
-- **Immigration Rate (%)**
+- **Immigration Rate (%)
 
 These plots provide a visual representation of the simulated impacts of the hypothetical presidency on the various factors over the 10-year period.
 
