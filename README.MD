@@ -42,7 +42,7 @@ The batch script `install_dependencies.bat` logs each step of the installation p
 
 You can review the `install_log.txt` file to troubleshoot any issues that arise during the installation process.
 
-The simulation script `simulation.py` logs the progression of the simulation to a file named `simulation_log.txt`. This log file includes:
+The simulation script `main.py` logs the progression of the simulation to a file named `simulation_log.txt`. This log file includes:
 
 - Initial values for the simulation.
 - Updates for each time step, including changes in GDP growth, unemployment rate, public approval, legislative success rate, social unrest index, and immigration rate.
