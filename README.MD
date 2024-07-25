@@ -44,7 +44,7 @@ You can review the `install_log.txt` file to troubleshoot any issues that arise 
 
 1. Run the simulation script:
     ```sh
-    python simulation.py
+    python main.py
     ```
 
 2. Follow the prompts to input initial values for the variables:
