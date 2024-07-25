@@ -14,7 +14,7 @@ This repository contains a Python simulation model that projects various politic
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/presidential-future-events-simulation.git
+    git clone https://github.com/kernferm/presidential-future-events-simulation.git
     cd presidential-future-events-simulation
     ```
 
