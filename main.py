@@ -1,8 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.stats import norm
+import simpy
 
 # Simulation parameters
 years = 10
+time_steps_per_year = 12
+total_steps = years * time_steps_per_year
 
 # User-defined initial values
 initial_gdp_growth = float(input("Enter initial GDP growth rate (%): "))
@@ -13,12 +17,12 @@ initial_social_unrest = float(input("Enter initial social unrest index (0-100): 
 initial_immigration_rate = float(input("Enter initial immigration rate (%): "))
 
 # Arrays to store simulation data
-gdp_growth = np.zeros(years)
-unemployment_rate = np.zeros(years)
-public_approval = np.zeros(years)
-legislative_success = np.zeros(years)
-social_unrest = np.zeros(years)
-immigration_rate = np.zeros(years)
+gdp_growth = np.zeros(total_steps)
+unemployment_rate = np.zeros(total_steps)
+public_approval = np.zeros(total_steps)
+legislative_success = np.zeros(total_steps)
+social_unrest = np.zeros(total_steps)
+immigration_rate = np.zeros(total_steps)
 
 # Initialize values
 gdp_growth[0] = initial_gdp_growth
@@ -28,29 +32,41 @@ legislative_success[0] = initial_legislative_success
 social_unrest[0] = initial_social_unrest
 immigration_rate[0] = initial_immigration_rate
 
+# Define the environment
+env = simpy.Environment()
+
 # Simulation loop
-for t in range(1, years):
-    # Update GDP growth
-    gdp_growth[t] = gdp_growth[t-1] + np.random.normal(0, 0.5)  # Random fluctuation
+def simulation(env):
+    for t in range(1, total_steps):
+        # Update GDP growth
+        gdp_growth[t] = gdp_growth[t-1] + norm.rvs(0, 0.5)  # Random fluctuation with normal distribution
 
-    # Update unemployment rate
-    unemployment_rate[t] = unemployment_rate[t-1] - 0.1 * gdp_growth[t] + 0.1 * immigration_rate[t-1]
+        # Update unemployment rate
+        unemployment_rate[t] = unemployment_rate[t-1] - 0.1 * gdp_growth[t] + 0.1 * immigration_rate[t-1]
 
-    # Update public approval
-    public_approval[t] = public_approval[t-1] + 0.2 * gdp_growth[t] - 0.3 * social_unrest[t-1] + np.random.normal(0, 2)
+        # Update public approval
+        public_approval[t] = public_approval[t-1] + 0.2 * gdp_growth[t] - 0.3 * social_unrest[t-1] + norm.rvs(0, 2)
 
-    # Update legislative success rate
-    legislative_success[t] = legislative_success[t-1] + 0.1 * public_approval[t-1] - 0.05 * social_unrest[t-1] + np.random.normal(0, 5)
+        # Update legislative success rate
+        legislative_success[t] = legislative_success[t-1] + 0.1 * public_approval[t-1] - 0.05 * social_unrest[t-1] + norm.rvs(0, 5)
 
-    # Update social unrest index
-    social_unrest[t] = social_unrest[t-1] + 0.2 * (100 - public_approval[t-1]) - 0.1 * legislative_success[t-1] + np.random.normal(0, 3)
+        # Update social unrest index
+        social_unrest[t] = social_unrest[t-1] + 0.2 * (100 - public_approval[t-1]) - 0.1 * legislative_success[t-1] + norm.rvs(0, 3)
 
-    # Update immigration rate
-    immigration_rate[t] = immigration_rate[t-1] + 0.1 * (100 - unemployment_rate[t-1]) + np.random.normal(0, 0.1)
+        # Update immigration rate
+        immigration_rate[t] = immigration_rate[t-1] + 0.1 * (100 - unemployment_rate[t-1]) + norm.rvs(0, 0.1)
+
+        # Wait for the next time step
+        yield env.timeout(1)
+
+# Run the simulation
+env.process(simulation(env))
+env.run(until=total_steps)
+
+# Convert steps to years for plotting
+years_array = np.arange(0, years, 1/time_steps_per_year)
 
 # Plotting the results
-years_array = np.arange(years)
-
 plt.figure(figsize=(14, 8))
 
 plt.subplot(2, 3, 1)
