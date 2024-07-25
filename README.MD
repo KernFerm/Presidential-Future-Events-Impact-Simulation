@@ -7,6 +7,7 @@ This repository contains a Python simulation model that projects various politic
 - **User-Defined Parameters:** Set initial values for GDP growth rate, unemployment rate, public approval rating, legislative success rate, social unrest index, and immigration rate.
 - **Detailed Interactions:** Model the relationships between variables to simulate realistic outcomes.
 - **Enhanced Visualization:** Visualize the results with detailed plots for each variable over time.
+- **Advanced Libraries:** Utilizes SciPy for scientific computing and SimPy for discrete-event simulation to provide robust and accurate modeling.
 
 ## Installation
 
@@ -18,7 +19,7 @@ This repository contains a Python simulation model that projects various politic
 
 2. Install the required dependencies:
     ```sh
-    pip install numpy matplotlib
+    pip install numpy matplotlib scipy simpy
     ```
 
 ## Usage
@@ -38,7 +39,7 @@ This repository contains a Python simulation model that projects various politic
     Enter initial immigration rate (%): 
     ```
 
-3. The simulation will run for 10 years and generate plots showing the progression of each variable.
+3. The simulation will run for 10 years (with monthly steps) and generate plots showing the progression of each variable.
 
 ## Example
 
