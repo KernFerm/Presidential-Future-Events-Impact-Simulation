@@ -2,9 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 import simpy
+import logging
 
-# Simulation parameters
-years = 10
+# Configure logging
+logging.basicConfig(filename='simulation_log.txt', level=logging.INFO, 
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+# User-defined simulation duration
+years = int(input("Enter the number of years for the simulation: "))
 time_steps_per_year = 12
 total_steps = years * time_steps_per_year
 
@@ -15,6 +20,15 @@ initial_public_approval = float(input("Enter initial public approval rating (%):
 initial_legislative_success = float(input("Enter initial legislative success rate (%): "))
 initial_social_unrest = float(input("Enter initial social unrest index (0-100): "))
 initial_immigration_rate = float(input("Enter initial immigration rate (%): "))
+
+# Log initial values
+logging.info(f'Simulation started for {years} years with initial values:')
+logging.info(f'GDP Growth Rate: {initial_gdp_growth}%')
+logging.info(f'Unemployment Rate: {initial_unemployment_rate}%')
+logging.info(f'Public Approval: {initial_public_approval}%')
+logging.info(f'Legislative Success Rate: {initial_legislative_success}%')
+logging.info(f'Social Unrest Index: {initial_social_unrest}')
+logging.info(f'Immigration Rate: {initial_immigration_rate}%')
 
 # Arrays to store simulation data
 gdp_growth = np.zeros(total_steps)
@@ -55,6 +69,15 @@ def simulation(env):
 
         # Update immigration rate
         immigration_rate[t] = immigration_rate[t-1] + 0.1 * (100 - unemployment_rate[t-1]) + norm.rvs(0, 0.1)
+
+        # Log updates
+        logging.info(f'Year {t // time_steps_per_year + 1}, Month {t % time_steps_per_year + 1}:')
+        logging.info(f'GDP Growth: {gdp_growth[t]:.2f}%')
+        logging.info(f'Unemployment Rate: {unemployment_rate[t]:.2f}%')
+        logging.info(f'Public Approval: {public_approval[t]:.2f}%')
+        logging.info(f'Legislative Success Rate: {legislative_success[t]:.2f}%')
+        logging.info(f'Social Unrest Index: {social_unrest[t]:.2f}')
+        logging.info(f'Immigration Rate: {immigration_rate[t]:.2f}%')
 
         # Wait for the next time step
         yield env.timeout(1)
