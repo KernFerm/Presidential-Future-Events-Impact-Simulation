@@ -51,7 +51,7 @@ The simulation script `simulation.py` logs the progression of the simulation to 
 
 1. Run the simulation script:
     ```sh
-    python simulation.py
+    python main.py
     ```
 
 2. Follow the prompts to input the number of years and initial values for the variables:
