@@ -89,7 +89,7 @@ def simulation(env):
         log_yearly_values(t)
 
         # Wait for the next time step
-        yield env.timeout(1)
+        yield env.timeout(1/time_steps_per_year)
 
 # Run the simulation
 env.process(simulation(env))
