@@ -89,4 +89,4 @@ Contributions are welcome! If you have ideas for improving the simulation or add
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the [MIT License](https://github.com/KernFerm/Presidential-Future-Events-Impact-Simulation/blob/main/LICENSE). See the LICENSE file for details.
