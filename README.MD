@@ -4,24 +4,25 @@ This repository contains a Python simulation model that forecasts political, eco
 
 ## Features
 
-- **User-Defined Parameters:** Set initial values for GDP growth rate, unemployment rate, public approval rating, legislative success rate, social unrest index, and immigration rate.
-- **Flexible Duration:** Simulate any number of years, from short-term to long-term projections.
-- **Detailed Interactions:** Model the relationships between variables to simulate realistic outcomes.
-- **Enhanced Visualization:** Visualize the results with detailed plots for each variable over time.
-- **Advanced Libraries:** Utilizes SciPy for scientific computing and SimPy for discrete-event simulation to provide robust and accurate modeling.
-- **Installation Logging:** Batch script logs the installation process for easy troubleshooting.
-- **Simulation Logging:** Logs the simulation process for detailed tracking and analysis.
+- **User-Defined Parameters**: Set initial values for GDP growth rate, unemployment rate, public approval rating, legislative success rate, social unrest index, and immigration rate.
+- **Flexible Duration**: Simulate any number of years, from short-term to long-term projections.
+- **Detailed Interactions**: Model the relationships between variables to simulate realistic outcomes.
+- **Enhanced Visualization**: Visualize the results with detailed plots for each variable over time.
+- **Advanced Libraries**: Utilizes SciPy for scientific computing and SimPy for discrete-event simulation to provide robust and accurate modeling.
+- **Simulation Logging**: Logs the simulation process for detailed tracking and analysis.
 
 ## Installation
 
 1. Clone the repository:
-    ```sh
+
+    ```bash
     git clone https://github.com/kernferm/presidential-future-events-simulation.git
     cd presidential-future-events-simulation
     ```
 
 2. Run the batch script to install the required dependencies:
-    ```sh
+
+    ```bash
     install_dependencies.bat
     ```
 
@@ -31,7 +32,7 @@ This repository contains a Python simulation model that forecasts political, eco
     - Install the necessary Python packages: `numpy`, `matplotlib`, `scipy`, and `simpy`.
     - Log the installation process to `install_log.txt` for troubleshooting.
 
-### Logging
+## Logging
 
 The batch script `install_dependencies.bat` logs each step of the installation process to a file named `install_log.txt`. This log file includes:
 
@@ -45,17 +46,19 @@ You can review the `install_log.txt` file to troubleshoot any issues that arise 
 The simulation script `main.py` logs the progression of the simulation to a file named `simulation_log.txt`. This log file includes:
 
 - Initial values for the simulation.
-- Updates for each time step, including changes in GDP growth, unemployment rate, public approval, legislative success rate, social unrest index, and immigration rate.
+- Updates for each time step (monthly), including changes in GDP growth, unemployment rate, public approval, legislative success rate, social unrest index, and immigration rate.
 
 ## Usage
 
 1. Run the simulation script:
-    ```sh
+
+    ```bash
     python main.py
     ```
 
 2. Follow the prompts to input the number of years and initial values for the variables:
-    ```
+
+    ```plaintext
     Enter the number of years for the simulation: 
     Enter initial GDP growth rate (%): 
     Enter initial unemployment rate (%): 
@@ -71,12 +74,12 @@ The simulation script `main.py` logs the progression of the simulation to a file
 
 After running the script and inputting the initial values, the following plots will be generated:
 
-- **GDP Growth (%)**
-- **Unemployment Rate (%)**
-- **Public Approval (%)**
-- **Legislative Success Rate (%)**
-- **Social Unrest Index**
-- **Immigration Rate (%)**
+- GDP Growth (%)
+- Unemployment Rate (%)
+- Public Approval (%)
+- Legislative Success Rate (%)
+- Social Unrest Index
+- Immigration Rate (%)
 
 These plots provide a visual representation of the simulated impacts of the hypothetical presidency on the various factors over the specified period.
 
@@ -86,4 +89,4 @@ Contributions are welcome! If you have ideas for improving the simulation or add
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
