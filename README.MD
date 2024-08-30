@@ -11,6 +11,12 @@ This repository contains a Python simulation model that forecasts political, eco
 - **Advanced Libraries**: Utilizes SciPy for scientific computing and SimPy for discrete-event simulation to provide robust and accurate modeling.
 - **Simulation Logging**: Logs the simulation process for detailed tracking and analysis.
 
+### If you dont have a pet python here is a couple below:
+- **YOU ONLY NEED ONLY VERSION OF PYTHON TO RUN THIS !!**
+- [Python 3.11.6](https://github.com/KernFerm/Py3.11.6installer)
+- [Python 3.11.9](https://github.com/KernFerm/Py3.11.9installer)
+- [Python 3.12.1](https://github.com/KernFerm/Py3.12.1-installer-batch)
+
 ## Installation
 
 1. Clone the repository:
