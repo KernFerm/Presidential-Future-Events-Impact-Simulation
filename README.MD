@@ -1,3 +1,8 @@
+## Support the Project ⭐
+
+If you find this project useful, please give it a star! Your support is appreciated and helps keep the project growing. 🌟
+
+
 # 🗳️ Presidential and Future Events Impact Simulation 🌍
 
 This repository contains a **Python simulation model** that forecasts political, economic, and social factors over a specified period under a hypothetical presidency 🏛️. Users can input initial values for key variables, and the model simulates their progression through defined interactions and random variations 📊.
