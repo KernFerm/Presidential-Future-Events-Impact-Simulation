@@ -20,7 +20,10 @@ This repository contains a **Python simulation model** that forecasts political,
 
 ---
 
-- [https://discord.gg/FxJd3PxXbc](https://discord.gg/FxJd3PxXbc)
+# Join the discord if you need help 
+
+[https://fnbubbles420.org/discordinvite](https://fnbubbles420.org/discordinvite)
+
 
 ### 🐍 Python Versions
 
